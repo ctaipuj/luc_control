@@ -1,0 +1,21 @@
+<launch>
+  <arg name="sim" default="false" />
+  <arg name="limited" default="false"/>
+  <arg name="debug" default="false" />
+  
+  <include file="$(find ur_modern_driver)/launch/ur3_bringup.launch"/> <!-- launches common.launch which activates communication with robot. and ur_upload.launch that launches the robot_description.-->
+  <include file="$(find ur3_moveit_config)/launch/moveit_rviz.launch"/> <!--launches rviz and its configuration for motion planning with moveit-->
+    
+  <!-- Remap follow_joint_trajectory -->
+  <remap if="$(arg sim)" from="/follow_joint_trajectory" to="/arm_controller/follow_joint_trajectory"/>
+  
+  <!-- Launch moveit -->
+  <include file="$(find ur3_moveit_config)/launch/move_group.launch">
+    <arg name="limited" default="$(arg limited)"/>
+    <arg name="debug" default="$(arg debug)" />
+  </include>
+  
+  <!--Gripper's fake joint state node since we are not able to access current gripper's position-->
+  <node name="gripper_fake_state_publisher" pkg="robotiq_85_control" type="gripper_fake_joint_states"/>
+  
+</launch>
