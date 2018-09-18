@@ -11,7 +11,7 @@ int main(int argc, char* argv[]){
 	g.moveto(50); //moves gripper to a position 0-255
 	g.setTimeOut(10); 
 	g.moveto(300); //valid invalid
-	g.setSpeed(15); //0-255
+	g.setSpeed(0); //0-255
 	g.moveto(3);
 	g.setForce(257); //valid invalid 0-255
 	g.moveto(100);

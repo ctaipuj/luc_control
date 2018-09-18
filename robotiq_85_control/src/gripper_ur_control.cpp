@@ -342,14 +342,14 @@ std::string GripperUR::writeWhileOpen(){
 		
 std::string GripperUR::writeWhileClose(){
 	aux.str("");
-	aux<<" while (socket_get_var(\"POS\",\"G\")<230 and socket_get_var(\"OBJ\",\"G\")!=1 and socket_get_var(\"OBJ\",\"G\")!=2 and t<"<<time_out<<"):\n";
+	aux<<" while (socket_get_var(\"POS\",\"G\")<227 and socket_get_var(\"OBJ\",\"G\")!=1 and socket_get_var(\"OBJ\",\"G\")!=2 and t<"<<time_out<<"):\n";
 	return aux.str();
 }
 		
 std::string GripperUR::writeWhile(int pose, int t){
 	aux.str("");
 	if(pose>230)
-		aux<<" while (socket_get_var(\"POS\",\"G\")<"<<230-t<<" and socket_get_var(\"OBJ\",\"G\")!=1 and socket_get_var(\"OBJ\",\"G\")!=2 and t<"<<time_out<<"):\n";
+		aux<<" while (socket_get_var(\"POS\",\"G\")<"<<227-t<<" and socket_get_var(\"OBJ\",\"G\")!=1 and socket_get_var(\"OBJ\",\"G\")!=2 and t<"<<time_out<<"):\n";
 	else if(pose<3)
 		aux<<" while (socket_get_var(\"POS\",\"G\")>"<<3+t<<" and socket_get_var(\"OBJ\",\"G\")!=1 and socket_get_var(\"OBJ\",\"G\")!=2 and t<"<<time_out<<"):\n";
 	else
