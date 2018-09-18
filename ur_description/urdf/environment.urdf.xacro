@@ -7,7 +7,7 @@
 	<link name="table">
 		<visual>
 			<geometry>
-				<mesh filename="package://ur_description/meshes/environment/feeder_table2.stl" scale="0.01 0.01 0.01"/>
+				<mesh filename="package://ur_description/meshes/environment/table.stl" scale="0.01 0.01 0.01"/>
 			</geometry>
 			<origin xyz="0 0 0"/>
 			<material name="gray_conveyor">
@@ -19,7 +19,7 @@
 	<link name="mounting">
 		<visual>
 			<geometry>
-				<mesh filename="package://ur_description/meshes/environment/Base_link2.stl"/>
+				<mesh filename="package://ur_description/meshes/environment/mounting.stl"/>
 			</geometry>
 			<origin xyz="0 0 0"/>
 			<material name="gray_conveyor"/>
