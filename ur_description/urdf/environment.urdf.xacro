@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<model xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:macro name="environment" params="name prefix">
+	
+		<!-- link list -->
+
+	<link name="table">
+		<visual>
+			<geometry>
+				<mesh filename="package://ur_description/meshes/environment/feeder_table2.stl" scale="0.01 0.01 0.01"/>
+			</geometry>
+			<origin xyz="0 0 0"/>
+			<material name="gray_conveyor">
+				<texture filename="package://ur_description/meshes/environment/textures/silver.png"/>
+			</material>
+		</visual>
+	</link>
+	
+	<link name="mounting">
+		<visual>
+			<geometry>
+				<mesh filename="package://ur_description/meshes/environment/Base_link2.stl"/>
+			</geometry>
+			<origin xyz="0 0 0"/>
+			<material name="gray_conveyor"/>
+		</visual>
+	</link>
+	
+	<link name="glass">
+		<visual>
+			<geometry>
+				<box size="0.02 1 1"/>
+			</geometry>
+			<origin xyz="0.02 0 0.42"/>
+			<material name="gray_conveyor"/>
+		</visual>
+	</link>
+	
+	
+
+		<!-- joint list -->
+	<joint name="table_to_robot" type="fixed">
+		<parent link="base"/>
+		<child link="table"/>
+		<origin xyz="0 0.15 -0.087" rpy="0 0 -1.57"/>
+	</joint>
+	
+	<joint name="mounting_to_robot" type="fixed">
+		<parent link="base"/>
+		<child link="mounting"/>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+	</joint>
+	
+	<joint name="glass_to_robot" type="fixed">
+		<parent link="base"/>
+		<child link="glass"/>
+		<origin xyz="0.26 0 0" rpy="0 0 0"/>
+	</joint>
+	
+		<!-- end of joint list -->
+	
+	</xacro:macro>
+	
+	<xacro:environment name="environment" prefix="environment_"/>
+	
+	
+</model>

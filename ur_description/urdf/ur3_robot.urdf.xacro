@@ -7,6 +7,9 @@
 
   <!-- ur3 -->
   <xacro:include filename="$(find ur_description)/urdf/ur3.urdf.xacro" />
+  
+  <!--environment-->
+  <xacro:include filename="$(find ur_description)/urdf/environment.urdf.xacro"/>
 
   <!--gripper-->
   <xacro:include filename="$(find robotiq_85_description)/urdf/robotiq_85_gripper.xacro" />
