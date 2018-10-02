@@ -27,7 +27,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES gripper_ur_control
-  CATKIN_DEPENDS rosccp rospy ur_modern_driver ur_msgs
+  CATKIN_DEPENDS roscpp rospy ur_modern_driver ur_msgs
 )
 
 ###########
