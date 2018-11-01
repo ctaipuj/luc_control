@@ -1,0 +1,418 @@
+\hypertarget{classur__variables}{}\section{ur\+\_\+variables Class Reference}
+\label{classur__variables}\index{ur\+\_\+variables@{ur\+\_\+variables}}
+
+
+This class is used to manage the I/O screen of the U\+R3 robot using ros.  
+
+
+
+
+{\ttfamily \#include $<$ur\+\_\+variables.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classur__variables_ae48f4c06e283ae8652ebf1d58ce7aa57}{ur\+\_\+variables} ()
+\item 
+void \hyperlink{classur__variables_a2eb944230192b5fbbcce71e27d533bae}{ur\+\_\+variables\+\_\+status\+Callback} (const ur\+\_\+msgs\+::\+I\+O\+States\+::\+Const\+Ptr \&msg)
+\item 
+void \hyperlink{classur__variables_a3da1e6c56506adc53c6dc1177ad5f919}{ur\+\_\+variables\+\_\+state\+\_\+status\+Callback} (const industrial\+\_\+msgs\+::\+Robot\+Status\+::\+Const\+Ptr \&msg)
+\item 
+void \hyperlink{classur__variables_a890d76f17080f795019952ea36e99de9}{set\+High} (int address)
+\item 
+void \hyperlink{classur__variables_adaa62059d6889e0050d7e784755e1054}{set\+Low} (int address)
+\item 
+void \hyperlink{classur__variables_ad2d4c4965eac5b61465b1fc3ee8667c6}{set\+Payload} (float mass=0.\+900)
+\item 
+void \hyperlink{classur__variables_a2372f1f4492b3272d3908ddd8e535dab}{set\+Output} (int address, int state)
+\item 
+void \hyperlink{classur__variables_a4109fb52d270fd0d180eeadda8e47c18}{set\+Output\+Tool} (int address, int state)
+\item 
+void \hyperlink{classur__variables_a3e19da4c1997732e1ec1bb8cbd632126}{set\+Analog\+Current} (int address, float current)
+\item 
+void \hyperlink{classur__variables_a8801071f124c7aa54ae2a6cde66fc00c}{set\+Analog\+Current\+Factor} (int address, float factor)
+\item 
+void \hyperlink{classur__variables_a666aa5f8c1604edec18d550a7c3981cd}{set\+Analog\+Voltage} (int address, float voltage)
+\item 
+void \hyperlink{classur__variables_ac5c23484f351ae70a789e61c3e1a2050}{set\+Analog\+Voltage\+Factor} (int address, float factor)
+\item 
+float \hyperlink{classur__variables_a1c192fdbea31c9fb732fc04b2ceeda3c}{get\+Payload} ()
+\item 
+int \hyperlink{classur__variables_afc3a5168edfd41b2bcd29208eb9d1cf6}{get\+Output} (int address)
+\item 
+int \hyperlink{classur__variables_a09a51297fcbb792c47e6aaf1ab385e68}{get\+Input} (int address)
+\item 
+int \hyperlink{classur__variables_adbdc9a5059ebaa33a7cf396b50cfa43b}{get\+Output\+Tool} (int address)
+\item 
+int \hyperlink{classur__variables_a659a8dff99c4d05008b71d4895ebfd58}{get\+Input\+Tool} (int address)
+\item 
+float \hyperlink{classur__variables_a4a1d3df9175c2f3112b3196150cf396e}{get\+Analog\+Output\+Current} (int address)
+\item 
+float \hyperlink{classur__variables_a6cbcde159d8b46f483071456f925a883}{get\+Analog\+Output\+Voltage} (int address)
+\item 
+float \hyperlink{classur__variables_ae1b47fca8605e12f71ec22b878fd4edb}{get\+Analog\+Output\+Current\+Factor} (int address)
+\item 
+float \hyperlink{classur__variables_a113239a482e63757a896c0747087ba4e}{get\+Analog\+Output\+Voltage\+Factor} (int address)
+\item 
+float \hyperlink{classur__variables_af68eb2eac2a72110fd62031c4c54aeb9}{get\+Analog\+Input\+Status} (int address)
+\item 
+bool \hyperlink{classur__variables_ab1be203855aab79060d90934ca6cfaba}{is\+E\+Stopped} ()
+\item 
+bool \hyperlink{classur__variables_a97bc8a5d56f169ac146c2f140f80f0ba}{is\+Powered} ()
+\item 
+bool \hyperlink{classur__variables_a997830387a813d207240d97dce8bcb32}{is\+Motion\+Possible} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to manage the I/O screen of the U\+R3 robot using ros. 
+
+This class uses the R\+OS service Set\+IO and Set\+Payload to access and edit controller\textquotesingle{}s data. You can modify the analog and digital outputs and read inputs and outputs status. This class also get the robot status (is the robot emergency stopped?, is the robot powered? is the robot ready to move?).You can also set current and or voltage to an analog output. Ypu require the ur\+\_\+modern\+\_\+driver to use this class. Unexpected behaviour could be notice when using current-\/voltage functions. To retrieve data a I\+O\+Status subscriber is used in the class. This class doesn\textquotesingle{}t depend on U\+R\+Script. \begin{DoxyAuthor}{Author}
+Barrero Lizarazo, Nicolas 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 2018 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!ur\+\_\+variables@{ur\+\_\+variables}}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{ur\+\_\+variables()}{ur_variables()}}]{\setlength{\rightskip}{0pt plus 5cm}ur\+\_\+variables\+::ur\+\_\+variables (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_ae48f4c06e283ae8652ebf1d58ce7aa57}{}\label{classur__variables_ae48f4c06e283ae8652ebf1d58ce7aa57}
+The constructor initializes subcriptions to io\+\_\+states and robot\+\_\+status topics also creates two service clients; set\+\_\+io and set\+\_\+payload. No topic is advertised using this class. 
+
+\subsection{Member Function Documentation}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Analog\+Input\+Status@{get\+Analog\+Input\+Status}}
+\index{get\+Analog\+Input\+Status@{get\+Analog\+Input\+Status}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Analog\+Input\+Status(int address)}{getAnalogInputStatus(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}float ur\+\_\+variables\+::get\+Analog\+Input\+Status (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_af68eb2eac2a72110fd62031c4c54aeb9}{}\label{classur__variables_af68eb2eac2a72110fd62031c4c54aeb9}
+Gets analog input status in voltage or current according what is configured in the robot\textquotesingle{}s controller. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents analog inputs(0-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float status in V or mA according to robot\textquotesingle{}s configuration. 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Analog\+Output\+Current@{get\+Analog\+Output\+Current}}
+\index{get\+Analog\+Output\+Current@{get\+Analog\+Output\+Current}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Analog\+Output\+Current(int address)}{getAnalogOutputCurrent(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}float ur\+\_\+variables\+::get\+Analog\+Output\+Current (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a4a1d3df9175c2f3112b3196150cf396e}{}\label{classur__variables_a4a1d3df9175c2f3112b3196150cf396e}
+Gets analog output current in mA. Unexpected behaviour can show up here. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents analog outputs(0-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float current in mA (4m\+A-\/20mA) 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Analog\+Output\+Current\+Factor@{get\+Analog\+Output\+Current\+Factor}}
+\index{get\+Analog\+Output\+Current\+Factor@{get\+Analog\+Output\+Current\+Factor}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Analog\+Output\+Current\+Factor(int address)}{getAnalogOutputCurrentFactor(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}float ur\+\_\+variables\+::get\+Analog\+Output\+Current\+Factor (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_ae1b47fca8605e12f71ec22b878fd4edb}{}\label{classur__variables_ae1b47fca8605e12f71ec22b878fd4edb}
+Gets analog output current as a percentage of max current(0-\/$>$4mA, 1-\/$>$20mA). Data is linear interpolated. Unexpected behaviour can show up here. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents analog outputs(0-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float factor(0-\/1) 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Analog\+Output\+Voltage@{get\+Analog\+Output\+Voltage}}
+\index{get\+Analog\+Output\+Voltage@{get\+Analog\+Output\+Voltage}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Analog\+Output\+Voltage(int address)}{getAnalogOutputVoltage(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}float ur\+\_\+variables\+::get\+Analog\+Output\+Voltage (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a6cbcde159d8b46f483071456f925a883}{}\label{classur__variables_a6cbcde159d8b46f483071456f925a883}
+Gets analog output voltage in V. Unexpected behaviour can show up here. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents analog outputs(0-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float voltage in V (0\+V-\/10V) 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Analog\+Output\+Voltage\+Factor@{get\+Analog\+Output\+Voltage\+Factor}}
+\index{get\+Analog\+Output\+Voltage\+Factor@{get\+Analog\+Output\+Voltage\+Factor}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Analog\+Output\+Voltage\+Factor(int address)}{getAnalogOutputVoltageFactor(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}float ur\+\_\+variables\+::get\+Analog\+Output\+Voltage\+Factor (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a113239a482e63757a896c0747087ba4e}{}\label{classur__variables_a113239a482e63757a896c0747087ba4e}
+Gets analog output voltage as a percentage of max voltage(0-\/$>$0V, 1-\/$>$10V). Data is linear interpolated. Unexpected behaviour can show up here. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents analog outputs(0-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float factor(0-\/1) 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Input@{get\+Input}}
+\index{get\+Input@{get\+Input}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Input(int address)}{getInput(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}int ur\+\_\+variables\+::get\+Input (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a09a51297fcbb792c47e6aaf1ab385e68}{}\label{classur__variables_a09a51297fcbb792c47e6aaf1ab385e68}
+Gets a digital intput state. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents the digital intput address(0-\/15) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+state 1 for true/on 0 for false/off 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Input\+Tool@{get\+Input\+Tool}}
+\index{get\+Input\+Tool@{get\+Input\+Tool}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Input\+Tool(int address)}{getInputTool(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}int ur\+\_\+variables\+::get\+Input\+Tool (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a659a8dff99c4d05008b71d4895ebfd58}{}\label{classur__variables_a659a8dff99c4d05008b71d4895ebfd58}
+Gets a tool input state. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents the tool input address(0-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+state 1 for true/on 0 for false/off 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Output@{get\+Output}}
+\index{get\+Output@{get\+Output}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Output(int address)}{getOutput(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}int ur\+\_\+variables\+::get\+Output (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_afc3a5168edfd41b2bcd29208eb9d1cf6}{}\label{classur__variables_afc3a5168edfd41b2bcd29208eb9d1cf6}
+Gets a digital output state. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents the digital output address(0-\/15) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+state 1 for true/on 0 for false/off 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Output\+Tool@{get\+Output\+Tool}}
+\index{get\+Output\+Tool@{get\+Output\+Tool}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Output\+Tool(int address)}{getOutputTool(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}int ur\+\_\+variables\+::get\+Output\+Tool (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_adbdc9a5059ebaa33a7cf396b50cfa43b}{}\label{classur__variables_adbdc9a5059ebaa33a7cf396b50cfa43b}
+Gets a tool output state. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents the tool output address(0-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+state 1 for true/on 0 for false/off 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!get\+Payload@{get\+Payload}}
+\index{get\+Payload@{get\+Payload}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{get\+Payload()}{getPayload()}}]{\setlength{\rightskip}{0pt plus 5cm}float ur\+\_\+variables\+::get\+Payload (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a1c192fdbea31c9fb732fc04b2ceeda3c}{}\label{classur__variables_a1c192fdbea31c9fb732fc04b2ceeda3c}
+Gets robot\textquotesingle{}s payload. \begin{DoxyReturn}{Returns}
+payload mass (0-\/3)kg 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!is\+E\+Stopped@{is\+E\+Stopped}}
+\index{is\+E\+Stopped@{is\+E\+Stopped}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{is\+E\+Stopped()}{isEStopped()}}]{\setlength{\rightskip}{0pt plus 5cm}bool ur\+\_\+variables\+::is\+E\+Stopped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_ab1be203855aab79060d90934ca6cfaba}{}\label{classur__variables_ab1be203855aab79060d90934ca6cfaba}
+Is the robot emergency stopped? \begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!is\+Motion\+Possible@{is\+Motion\+Possible}}
+\index{is\+Motion\+Possible@{is\+Motion\+Possible}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{is\+Motion\+Possible()}{isMotionPossible()}}]{\setlength{\rightskip}{0pt plus 5cm}bool ur\+\_\+variables\+::is\+Motion\+Possible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a997830387a813d207240d97dce8bcb32}{}\label{classur__variables_a997830387a813d207240d97dce8bcb32}
+Is motion posible? \begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!is\+Powered@{is\+Powered}}
+\index{is\+Powered@{is\+Powered}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{is\+Powered()}{isPowered()}}]{\setlength{\rightskip}{0pt plus 5cm}bool ur\+\_\+variables\+::is\+Powered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a97bc8a5d56f169ac146c2f140f80f0ba}{}\label{classur__variables_a97bc8a5d56f169ac146c2f140f80f0ba}
+Is the robot powered up? \begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!set\+Analog\+Current@{set\+Analog\+Current}}
+\index{set\+Analog\+Current@{set\+Analog\+Current}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{set\+Analog\+Current(int address, float current)}{setAnalogCurrent(int address, float current)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::set\+Analog\+Current (
+\begin{DoxyParamCaption}
+\item[{int}]{address, }
+\item[{float}]{current}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a3e19da4c1997732e1ec1bb8cbd632126}{}\label{classur__variables_a3e19da4c1997732e1ec1bb8cbd632126}
+Sets analog output current in mA. Unexpected behaviour can show up here. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents analog outputs(0-\/1) \\
+\hline
+{\em float} & current in mA (4m\+A-\/20mA) \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!set\+Analog\+Current\+Factor@{set\+Analog\+Current\+Factor}}
+\index{set\+Analog\+Current\+Factor@{set\+Analog\+Current\+Factor}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{set\+Analog\+Current\+Factor(int address, float factor)}{setAnalogCurrentFactor(int address, float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::set\+Analog\+Current\+Factor (
+\begin{DoxyParamCaption}
+\item[{int}]{address, }
+\item[{float}]{factor}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a8801071f124c7aa54ae2a6cde66fc00c}{}\label{classur__variables_a8801071f124c7aa54ae2a6cde66fc00c}
+Sets analog output current as a percentage of max current(0-\/$>$4mA, 1-\/$>$20mA). Data is linear interpolated. Unexpected behaviour can show up here. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents analog outputs(0-\/1) \\
+\hline
+{\em float} & factor(0-\/1) \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!set\+Analog\+Voltage@{set\+Analog\+Voltage}}
+\index{set\+Analog\+Voltage@{set\+Analog\+Voltage}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{set\+Analog\+Voltage(int address, float voltage)}{setAnalogVoltage(int address, float voltage)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::set\+Analog\+Voltage (
+\begin{DoxyParamCaption}
+\item[{int}]{address, }
+\item[{float}]{voltage}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a666aa5f8c1604edec18d550a7c3981cd}{}\label{classur__variables_a666aa5f8c1604edec18d550a7c3981cd}
+Sets analog output voltage in V. Unexpected behaviour can show up here. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents analog outputs(0-\/1) \\
+\hline
+{\em float} & voltage in V (0\+V-\/10V) \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!set\+Analog\+Voltage\+Factor@{set\+Analog\+Voltage\+Factor}}
+\index{set\+Analog\+Voltage\+Factor@{set\+Analog\+Voltage\+Factor}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{set\+Analog\+Voltage\+Factor(int address, float factor)}{setAnalogVoltageFactor(int address, float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::set\+Analog\+Voltage\+Factor (
+\begin{DoxyParamCaption}
+\item[{int}]{address, }
+\item[{float}]{factor}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_ac5c23484f351ae70a789e61c3e1a2050}{}\label{classur__variables_ac5c23484f351ae70a789e61c3e1a2050}
+Sets analog output voltage as a percentage of max voltage(0-\/$>$0V, 1-\/$>$10V). Data is linear interpolated. Unexpected behaviour can show up here. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents analog outputs(0-\/1) \\
+\hline
+{\em float} & factor(0-\/1) \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!set\+High@{set\+High}}
+\index{set\+High@{set\+High}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{set\+High(int address)}{setHigh(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::set\+High (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a890d76f17080f795019952ea36e99de9}{}\label{classur__variables_a890d76f17080f795019952ea36e99de9}
+Sets a digital output to true/1. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents the address(0-\/15) \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!set\+Low@{set\+Low}}
+\index{set\+Low@{set\+Low}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{set\+Low(int address)}{setLow(int address)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::set\+Low (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_adaa62059d6889e0050d7e784755e1054}{}\label{classur__variables_adaa62059d6889e0050d7e784755e1054}
+Sets a digital output to false/0. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents the address(0-\/15) \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!set\+Output@{set\+Output}}
+\index{set\+Output@{set\+Output}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{set\+Output(int address, int state)}{setOutput(int address, int state)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::set\+Output (
+\begin{DoxyParamCaption}
+\item[{int}]{address, }
+\item[{int}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a2372f1f4492b3272d3908ddd8e535dab}{}\label{classur__variables_a2372f1f4492b3272d3908ddd8e535dab}
+Changes a digital output state. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents the address(0-\/15) \\
+\hline
+{\em states} & an int 1 for true/on 0 for false/off \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!set\+Output\+Tool@{set\+Output\+Tool}}
+\index{set\+Output\+Tool@{set\+Output\+Tool}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{set\+Output\+Tool(int address, int state)}{setOutputTool(int address, int state)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::set\+Output\+Tool (
+\begin{DoxyParamCaption}
+\item[{int}]{address, }
+\item[{int}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a4109fb52d270fd0d180eeadda8e47c18}{}\label{classur__variables_a4109fb52d270fd0d180eeadda8e47c18}
+Changes tool outputs state. 
+\begin{DoxyParams}{Parameters}
+{\em address} & an int that represents the address(0-\/1) \\
+\hline
+{\em states} & an int 1 for true/on 0 for false/off \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!set\+Payload@{set\+Payload}}
+\index{set\+Payload@{set\+Payload}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{set\+Payload(float mass=0.\+900)}{setPayload(float mass=0.900)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::set\+Payload (
+\begin{DoxyParamCaption}
+\item[{float}]{mass = {\ttfamily 0.900}}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_ad2d4c4965eac5b61465b1fc3ee8667c6}{}\label{classur__variables_ad2d4c4965eac5b61465b1fc3ee8667c6}
+Sets robot\textquotesingle{}s payload. Default is 900g (current gripper) 
+\begin{DoxyParams}{Parameters}
+{\em mass} & float payload (0-\/3)kg \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!ur\+\_\+variables\+\_\+state\+\_\+status\+Callback@{ur\+\_\+variables\+\_\+state\+\_\+status\+Callback}}
+\index{ur\+\_\+variables\+\_\+state\+\_\+status\+Callback@{ur\+\_\+variables\+\_\+state\+\_\+status\+Callback}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{ur\+\_\+variables\+\_\+state\+\_\+status\+Callback(const industrial\+\_\+msgs\+::\+Robot\+Status\+::\+Const\+Ptr \&msg)}{ur_variables_state_statusCallback(const industrial_msgs::RobotStatus::ConstPtr &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::ur\+\_\+variables\+\_\+state\+\_\+status\+Callback (
+\begin{DoxyParamCaption}
+\item[{const industrial\+\_\+msgs\+::\+Robot\+Status\+::\+Const\+Ptr \&}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a3da1e6c56506adc53c6dc1177ad5f919}{}\label{classur__variables_a3da1e6c56506adc53c6dc1177ad5f919}
+This is the regular Callback from a ros node, this function updates robot\+\_\+\+Status data. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & is the message type the nodes subscribes to\+: const industrial\+\_\+msgs\+::\+Robot\+Status\+::\+Const\+Ptr\& \\
+\hline
+\end{DoxyParams}
+\index{ur\+\_\+variables@{ur\+\_\+variables}!ur\+\_\+variables\+\_\+status\+Callback@{ur\+\_\+variables\+\_\+status\+Callback}}
+\index{ur\+\_\+variables\+\_\+status\+Callback@{ur\+\_\+variables\+\_\+status\+Callback}!ur\+\_\+variables@{ur\+\_\+variables}}
+\subsubsection[{\texorpdfstring{ur\+\_\+variables\+\_\+status\+Callback(const ur\+\_\+msgs\+::\+I\+O\+States\+::\+Const\+Ptr \&msg)}{ur_variables_statusCallback(const ur_msgs::IOStates::ConstPtr &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void ur\+\_\+variables\+::ur\+\_\+variables\+\_\+status\+Callback (
+\begin{DoxyParamCaption}
+\item[{const ur\+\_\+msgs\+::\+I\+O\+States\+::\+Const\+Ptr \&}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{classur__variables_a2eb944230192b5fbbcce71e27d533bae}{}\label{classur__variables_a2eb944230192b5fbbcce71e27d533bae}
+This is the regular Callback from a ros node, this function updates I/O data. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & is the message type the nodes subscribes to\+: const ur\+\_\+msgs\+::\+I\+O\+States\+::\+Const\+Ptr\& \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ctai/catkin\+\_\+ws2/src/universal\+\_\+robot/ur\+\_\+variables/include/ur\+\_\+variables/ur\+\_\+variables.\+h\end{DoxyCompactItemize}
