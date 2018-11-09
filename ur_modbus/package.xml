@@ -50,13 +50,13 @@
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
-  <build_depend>ur3_modern_driver</build_depend>
+  <build_depend>ur_modern_driver</build_depend>
   <build_depend>ur_msgs</build_depend>
   <build_export_depend>roscpp</build_export_depend>
-  <build_export_depend>ur3_modern_driver</build_export_depend>
+  <build_export_depend>ur_modern_driver</build_export_depend>
   <build_export_depend>ur_msgs</build_export_depend>
   <exec_depend>roscpp</exec_depend>
-  <exec_depend>ur3_modern_driver</exec_depend>
+  <exec_depend>ur_modern_driver</exec_depend>
   <exec_depend>ur_msgs</exec_depend>
 
 

@@ -9,7 +9,7 @@ project(ur_modbus)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  ur3_modern_driver
+  ur_modern_driver
   ur_msgs
 )
 
@@ -105,7 +105,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES ur_modbus
-#  CATKIN_DEPENDS roscpp ur3_modern_driver ur_msgs
+#  CATKIN_DEPENDS roscpp ur_modern_driver ur_msgs
 #  DEPENDS system_lib
 )
 
